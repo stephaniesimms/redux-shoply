@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-
+import { connect } from "react-redux";
+import { ADD_ITEM, REMOVE_ITEM } from "./actionTypes";
+// import {addItem} from "./actions";
 
 class Product extends Component {
   render() {
+    console.log("this.props in Product", this.props)
+
     return (
       <div>
         <h4>{this.props.name}</h4>
@@ -11,10 +15,37 @@ class Product extends Component {
           src={this.props.image_url}
           alt={this.props.name}
         />
+        <button onClick={this.props.addItem}>Add to cart</button>
+        <button onClick={this.props.removeItem}>Remove from cart</button>
       </div>
     );
   }
 }
 
-export default Product;
+// const mapDispatchToProps = {
+//   addItem: () => (
+//     { type: ADD_ITEM,
+//       payload: {  } 
+//     }),
+//   removeItem: () => (
+//     { type: REMOVE_ITEM }),
+// };
 
+function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    addItem: function(id) {
+      dispatch({
+        type: ADD_ITEM,
+        id: ownProps.id
+      });
+    },
+    removeItem: function(id) {
+      dispatch({
+        type: REMOVE_ITEM,
+        id: ownProps.id
+      })
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Product);

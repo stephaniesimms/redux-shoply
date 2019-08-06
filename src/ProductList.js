@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import Product from "./Product";
-import {connect } from "react-redux";
-import { ADD_ITEM, REMOVE_ITEM } from "./actionTypes";
+import { connect } from "react-redux";
 
 
 class ProductList extends Component {
@@ -12,13 +11,9 @@ class ProductList extends Component {
     this.removeItem = this.removeItem.bind(this);
   }
 
-  addItem() {
-    this.props.addItem()
-  }
+  addItem() { this.props.addItem() };
 
-  removeItem() {
-    this.props.removeItem()
-  }
+  removeItem() { this.props.removeItem() };
 
   render() {
     // console.log("this.props", this.props)
@@ -54,13 +49,6 @@ function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = {
-  addItem: () => (
-    { type: ADD_ITEM }),
-  removeItem: () => (
-    { type: REMOVE_ITEM }),
-};
+const connectComponentToRedux = connect(mapStateToProps);
 
-const connectComponentToRedux = connect(mapStateToProps, mapDispatchToProps);
-
-export default connectComponentToRedux(ProductList);;
+export default connectComponentToRedux(ProductList);
