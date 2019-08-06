@@ -30,6 +30,7 @@ class ProductList extends Component {
           name={product.name}
           price={product.price}
           description={product.description}
+          image_url={product.image_url}
           addItem={this.addItem}
           removeItem={this.removeItem}
         />
@@ -49,6 +50,4 @@ function mapStateToProps(state) {
   };
 }
 
-const connectComponentToRedux = connect(mapStateToProps);
-
-export default connectComponentToRedux(ProductList);
+export default connect(mapStateToProps)(ProductList);

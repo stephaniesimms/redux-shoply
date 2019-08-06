@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { ADD_ITEM, REMOVE_ITEM } from "./actionTypes";
-// import {addItem} from "./actions";
-
+import "./Product.css"
 class Product extends Component {
   render() {
-    console.log("this.props in Product", this.props)
-
+    console.log("image url in product", this.props.image_url)
     return (
       <div>
         <h4>{this.props.name}</h4>
