@@ -9,7 +9,7 @@ const DEFAULT_STATE = {
 };
 
 function reducer(state = DEFAULT_STATE, action) {
-  console.log("reducer ran; state & action:", state, action)
+  // console.log("reducer ran; state & action:", state, action)
 
   if (action.type === ADD_ITEM) {
     let cartItemsCopy = [...state.cartItems];

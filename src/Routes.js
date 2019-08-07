@@ -6,7 +6,8 @@ import Cart from "./Cart";
 class Routes extends Component {
 
   render() {
-    const { products } = this.props;
+    console.log("routes this.props", this.props)
+    const { products, items, cartTotal } = this.props;
 
     return (
       <main>
@@ -15,36 +16,20 @@ class Routes extends Component {
           <Route exact path="/"
             render={() => <ProductList products={products} />} />
 
-          {/* <Route exact path="/add-item/:itemType"
-            render={props => (
-              <NewItemForm
-                {...props}
-                addSnack={addSnack}
-                addDrink={addDrink}
-              />
-            )} />
-
-          <Route exact path="/snacks/"
-            render={() => <Menu snacks={snacks}
-              title="Snacks" />} />
-
-          <Route path="/snacks/:id"
+          <Route exact path="/products/"
+            render={() => <ProductList products={products} />} />
+{/* 
+          <Route path="/products/:id"
             render={(props) => <Item items={snacks}
               cantFind="/snacks/"
-              {...props} />} />
+              {...props} />} /> */}
 
-          <Route exact path="/drinks/"
-            render={() => <Menu drinks={drinks}
-              title="Drinks" />} />
-
-          <Route path="/drinks/:id"
-            render={(props) => <Item items={drinks}
-              cantFind="/drinks/"
-              {...props} />} />
+          <Route exact path="/cart/"
+            render={() => <Cart items={items} cartTotal={cartTotal} />} />
 
           <Route>
             <p className="error-msg">Hmmm. I can't seem to find what you want.</p>
-          </Route> */}
+          </Route>
 
         </Switch>
       </main>

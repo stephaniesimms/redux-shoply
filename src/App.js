@@ -10,12 +10,14 @@ class App extends Component {
     // if (this.state.isLoading) {
     //   return <p>Loading &hellip;</p>;
     // }
-
+    const { products, cartItems, cartTotalPrice } = this.props;
     return (
       <div className="App">
         <Navigation />
-        <Routes 
-          products={this.props.products}
+        <Routes
+          products={products}
+          cartItems={cartItems}
+          cartTotalPrice={cartTotalPrice}
         />
       </div>
     );
@@ -23,8 +25,11 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log("state in App", state)
   return {
-    products: state.products
+    products: state.products,
+    cartItems: state.cartItems,
+    cartTotalPrice: state.cartTotalPrice
   };
 }
 

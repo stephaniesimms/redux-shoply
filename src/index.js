@@ -14,11 +14,11 @@ const store = createStore(reducer,
   && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </Provider >,
   document.getElementById("root")
 );
 
