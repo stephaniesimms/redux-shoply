@@ -16,27 +16,42 @@ class ProductList extends Component {
   removeItem() { this.props.removeItem() };
 
   render() {
-    // console.log("this.props", this.props)
-    let inventoryObj = this.props.products;
-    let productKeys = Object.keys(this.props.products)
 
-    let products = productKeys.map(key => {
-      let product = inventoryObj[key]
+    let products = Object.entries(this.props.products).map(
+      ([key, product]) =>
+        <li key={key}>
+          <Link to={`/products/${key}`} >
+            <Product
+              id={key}
+              name={product.name}
+              price={product.price}
+              description={product.description}
+              image_url={product.image_url}
+              addItem={this.addItem}
+              removeItem={this.removeItem}
+            />
+          </Link>
+        </li>
+    );
 
-      return (
-        <Link to={`/products/${key}`} key={key}>
-          <Product
-            id={key}
-            name={product.name}
-            price={product.price}
-            description={product.description}
-            image_url={product.image_url}
-            addItem={this.addItem}
-            removeItem={this.removeItem}
-          />
-        </Link>
-      );
-    });
+    // let products = Object.entries(this.props.products).map(
+    //   entry => {
+    //     let key = entry[0];
+    //     let product = entry[1];
+    //     return <Link to={`/products/${key}`} key={key}>
+    //       <Product
+    //         id={key}
+    //         name={product.name}
+    //         price={product.price}
+    //         description={product.description}
+    //         image_url={product.image_url}
+    //         addItem={this.addItem}
+    //         removeItem={this.removeItem}
+    //       />
+    //     </Link>
+    //   }
+    // )
+
     return (
       <div>
         <ul>{products}</ul>
