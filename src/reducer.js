@@ -30,7 +30,6 @@ function reducer(state = DEFAULT_STATE, action) {
     let cartItemsCopy = [...state.cartItems];
     let removeItem = state.products[action.id];
     
-    // let updatedCart = state.cartItems.filter(item => item === removeItem);
     for (let i = 0; i < cartItemsCopy.length; i++) {
       if (cartItemsCopy[i] === removeItem) {
         cartItemsCopy.splice(i, 1);
