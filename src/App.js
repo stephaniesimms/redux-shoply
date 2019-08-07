@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Navigation from "./Navigation";
 import { connect } from "react-redux";
-// import ProductList from "./ProductList";
 import Routes from "./Routes";
 
 class App extends Component {

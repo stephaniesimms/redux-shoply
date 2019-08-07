@@ -7,7 +7,7 @@ class Routes extends Component {
 
   render() {
     console.log("routes this.props", this.props)
-    const { products, items, cartTotal } = this.props;
+    const { products, cartItems, cartTotalPrice } = this.props;
 
     return (
       <main>
@@ -25,7 +25,7 @@ class Routes extends Component {
               {...props} />} /> */}
 
           <Route exact path="/cart/"
-            render={() => <Cart items={items} cartTotal={cartTotal} />} />
+            render={() => <Cart items={cartItems} cartTotal={cartTotalPrice} />} />
 
           <Route>
             <p className="error-msg">Hmmm. I can't seem to find what you want.</p>
