@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
+import Product from "./Product";
+import ProductDetails from "./ProductDetails";
 
 class Routes extends Component {
 
@@ -18,11 +20,11 @@ class Routes extends Component {
 
           <Route exact path="/products/"
             render={() => <ProductList products={products} />} />
-{/* 
+
           <Route path="/products/:id"
-            render={(props) => <Item items={snacks}
-              cantFind="/snacks/"
-              {...props} />} /> */}
+            render={(props) => <ProductDetails products={products}
+              cantFind="/products/"
+              {...props} />} />
 
           <Route exact path="/cart/"
             render={() => <Cart items={cartItems} cartTotal={cartTotalPrice} />} />

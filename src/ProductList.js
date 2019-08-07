@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Product from "./Product";
 import { connect } from "react-redux";
 
@@ -19,21 +19,22 @@ class ProductList extends Component {
     // console.log("this.props", this.props)
     let inventoryObj = this.props.products;
     let productKeys = Object.keys(this.props.products)
-    
+
     let products = productKeys.map(key => {
       let product = inventoryObj[key]
 
       return (
-        <Product
-          id={key}
-          key={key}
-          name={product.name}
-          price={product.price}
-          description={product.description}
-          image_url={product.image_url}
-          addItem={this.addItem}
-          removeItem={this.removeItem}
-        />
+        <Link to={`/products/${key}`} key={key}>
+          <Product
+            id={key}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+            image_url={product.image_url}
+            addItem={this.addItem}
+            removeItem={this.removeItem}
+          />
+        </Link>
       );
     });
     return (

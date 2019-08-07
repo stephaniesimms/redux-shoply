@@ -5,8 +5,8 @@ import { ADD_ITEM, REMOVE_ITEM } from "./actionTypes";
 
 class Cart extends Component {
   render() {
-    console.log(this.props.items)
-    let cartContent = this.props.items.map(item => 
+
+    const cartContent = this.props.items.map(item => 
         <li>
           <p>{item.name}</p>
         </li>
