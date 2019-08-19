@@ -3,6 +3,21 @@ import { Link } from 'react-router-dom';
 import Product from "./Product";
 import { connect } from "react-redux";
 
+// function createListItem(entry) {
+//   let key = entry[0];
+//   let product = entry[1];
+//   return <Link to={`/products/${key}`} key={key}>
+//     <Product
+//       id={key}
+//       name={product.name}
+//       price={product.price}
+//       description={product.description}
+//       image_url={product.image_url}
+//       addItem={this.addItem}
+//       removeItem={this.removeItem}
+//     />
+//   </Link>
+// }
 
 class ProductList extends Component {
   constructor(props) {
@@ -50,6 +65,10 @@ class ProductList extends Component {
     //       />
     //     </Link>
     //   }
+    // )
+
+    // let products = Object.entries(this.props.products).map(
+    //   entry => createListItem(entry)
     // )
 
     return (
