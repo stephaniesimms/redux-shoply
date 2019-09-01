@@ -8,7 +8,7 @@ const DEFAULT_STATE = {
   cartTotalPrice: 0.0
 };
 
-function reducer(state = DEFAULT_STATE, action) {
+function rootReducer(state = DEFAULT_STATE, action) {
   // console.log("reducer ran; state & action:", state, action)
 
   if (action.type === ADD_ITEM) {
@@ -46,4 +46,4 @@ function reducer(state = DEFAULT_STATE, action) {
 }
 
 
-export default reducer;
+export default rootReducer;

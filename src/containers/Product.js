@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { ADD_ITEM, REMOVE_ITEM } from "./actionTypes";
+import { ADD_ITEM, REMOVE_ITEM } from "../actionTypes";
 import "./Product.css"
 
 class Product extends Component {

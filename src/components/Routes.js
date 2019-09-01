@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import ProductList from "./ProductList";
+import ProductList from "../containers/ProductList";
 import Cart from "./Cart";
-import Product from "./Product";
+import Product from "../containers/Product";
 import ProductDetails from "./ProductDetails";
 
 class Routes extends Component {
